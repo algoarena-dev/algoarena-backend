@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: algoarena
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/algoarena
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      naming:
+        #naming strategy for automatic converting (camelCase to snake_case)
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+      ddl-auto: update
