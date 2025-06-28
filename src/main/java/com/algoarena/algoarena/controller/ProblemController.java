@@ -3,7 +3,6 @@ package com.algoarena.algoarena.controller;
 
 import com.algoarena.algoarena.dto.ProblemRequestDto;
 import com.algoarena.algoarena.dto.ProblemResponseDto;
-import com.algoarena.algoarena.service.ProblemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +13,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/problems")
 public class ProblemController {
-    private final ProblemService problemService;
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
@@ -25,7 +23,6 @@ public class ProblemController {
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ProblemResponseDto getProblemById(@PathVariable Long id){
-
     }
 
     @PostMapping
