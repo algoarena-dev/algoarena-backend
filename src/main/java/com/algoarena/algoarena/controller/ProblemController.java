@@ -4,7 +4,6 @@ package com.algoarena.algoarena.controller;
 import com.algoarena.algoarena.dto.ProblemRequestDto;
 import com.algoarena.algoarena.dto.ProblemResponseDto;
 import com.algoarena.algoarena.service.ProblemService;
-import com.algoarena.algoarena.service.impl.JpaProblemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
