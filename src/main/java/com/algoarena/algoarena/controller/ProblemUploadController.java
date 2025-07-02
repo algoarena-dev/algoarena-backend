@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.*;
 public class ProblemUploadController {
     private final MinioService minioService;
 
-    @GetMapping("/{id}/upload-url")
+    @GetMapping("/upload-url")
     @ResponseStatus(HttpStatus.OK)
-    public PresignedUrlResponseDto getPresignedUrl(@PathVariable Long id){
-        return minioService.getPresignedUrl(id);
+    public PresignedUrlResponseDto getPresignedUrl(@RequestParam String objectName){
+        return minioService.getPresignedUrl(objectName);
     }
 }
