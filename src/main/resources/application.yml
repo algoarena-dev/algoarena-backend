@@ -3,17 +3,20 @@ spring:
     name: algoarena
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/algoarena
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/algoarena}
+    username: ${SPRING_DATASOURCE_USERNAME:algo_user}
+    password: ${SPRING_DATASOURCE_PASSWORD:algo_pass}
     driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 5
 
   jpa:
     hibernate:
       naming:
-        #naming strategy for automatic converting (camelCase to snake_case)
         physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
       ddl-auto: update
+    database-platform: ${SPRING_JPA_DATABASE_PLATFORM}
 
   minio:
     url: ${MINIO_ENDPOINT:http://localhost:9000}
@@ -21,3 +24,8 @@ spring:
     secret-key: ${MINIO_ROOT_PASSWORD:minioadmin}
     bucket-name: ${MINIO_BUCKET_NAME}
     presigned-url-expiry: ${MINIO_PRESIGNED_URL_EXPIRY:5}
+
+logging:
+  level:
+    org.springframework: INFO
+    org.hibernate: INFO
