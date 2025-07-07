@@ -25,11 +25,11 @@ public class Problem {
     private int timeLimitMillis;
     private int memoryLimitMB;
 
-    private String statementCdnUrl;
-    private String inputFormatCdnUrl;
-    private String outputFormatCdnUrl;
+    private String statementPath;
+    private String inputFormatPath;
+    private String outputFormatPath;
 
-    private String testCasesCdnUrl; // test cases CDN url
+    private String testCasesPath;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
@@ -39,8 +39,8 @@ public class Problem {
 
     @ElementCollection
     @CollectionTable(name = "problem_images", joinColumns = @JoinColumn(name = "problem_id"))
-    @Column(name = "image_url")
-    private List<String> imageUrls;
+    @Column(name = "image_path")
+    private List<String> imagePaths;
 
     @ElementCollection
     @CollectionTable(name = "problem_tags", joinColumns = @JoinColumn(name = "problem_id"))
