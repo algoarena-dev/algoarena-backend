@@ -22,11 +22,11 @@ public class ProblemResponseDto {
     private int timeLimitMillis;
     private int memoryLimitMB;
 
-    private String statementCdnUrl;
-    private String inputFormatCdnUrl;
-    private String outputFormatCdnUrl;
+    private String statementPath;
+    private String inputFormatPath;
+    private String outputFormatPath;
 
-    private String testCasesCdnUrl;
+    private String testCasesPath;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
@@ -34,8 +34,7 @@ public class ProblemResponseDto {
     private String sampleInput;
     private String sampleOutput;
 
-    private List<String> imageUrls;
-
+    private List<String> imagePaths;
 
     private List<String>tags;
 }
